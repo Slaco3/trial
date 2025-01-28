@@ -6,11 +6,8 @@ using UnityEngine.Serialization;
 public class SpawnerBehavior : MonoBehaviour
 {
     [SerializeField] private GameObject container;
-
-    [FormerlySerializedAs("prefab")] [SerializeField]
-    private GameObject prefabToSpawn;
-
-    [SerializeField] private Vector3 instantiatedRotation;
+    [SerializeField] private GameObject prefabToSpawn;
+    [FormerlySerializedAs("instantiatedRotation")] [SerializeField] private Vector3 spawnRotation;
 
     private async void Awake()
     {
@@ -23,6 +20,6 @@ public class SpawnerBehavior : MonoBehaviour
     {
         await Task.Delay(TimeSpan.FromSeconds(delayInSeconds));
         var instantiatedGameObject = Instantiate(prefabToSpawn, container.transform);
-        instantiatedGameObject.transform.rotation = Quaternion.Euler(instantiatedRotation);
+        instantiatedGameObject.transform.rotation = Quaternion.Euler(spawnRotation);
     }
 }
