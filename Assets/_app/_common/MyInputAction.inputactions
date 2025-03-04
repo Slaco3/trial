@@ -49,11 +49,44 @@
                 },
                 {
                     "name": "",
+                    "id": "5ec6e611-4566-4573-a0ec-bce4c313818d",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "24298b42-d7fc-4568-851e-246cb62a2b05",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "f0489dd7-5230-4d09-8875-1e874d322115",
                     "path": "<Pointer>/delta",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Mouse and keyboard",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ee6f36bd-53d3-4be2-a778-7f0a5d6263b7",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
                     "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -99,7 +132,7 @@
                     "path": "<Pointer>/delta",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Mouse and keyboard",
                     "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -110,7 +143,7 @@
                     "path": "<Pointer>/press",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Mouse and keyboard",
                     "action": "EnableRotate",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -121,8 +154,41 @@
                     "path": "<Mouse>/scroll",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Mouse and keyboard",
                     "action": "Zoom",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fee9b90f-299c-43bc-9a5c-910b6d45a9f4",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "49f8540a-5d98-4484-b183-5102fd4eecbc",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Zoom",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bef3cbb0-3a0e-4e1b-977e-39aaf9075227",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "EnableRotate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -142,6 +208,17 @@
                 {
                     "devicePath": "<Keyboard>",
                     "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Controller",
+            "bindingGroup": "Controller",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": true,
                     "isOR": false
                 }
             ]

@@ -284,7 +284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7787459894887630453, guid: 5544916be247c764688c5f311964ba46, type: 3}
       propertyPath: m_DefaultControlScheme
-      value: Mouse and keyboard
+      value: Controller
       objectReference: {fileID: 0}
     - target: {fileID: 7787459894887630453, guid: 5544916be247c764688c5f311964ba46, type: 3}
       propertyPath: m_NeverAutoSwitchControlSchemes
