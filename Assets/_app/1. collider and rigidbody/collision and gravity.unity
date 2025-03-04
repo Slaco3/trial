@@ -152,7 +152,7 @@ Transform:
   m_GameObject: {fileID: 219922751}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 0, z: -0.25}
+  m_LocalPosition: {x: -0.3699999, y: 0, z: -0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -331,11 +331,12 @@ PrefabInstance:
       propertyPath: m_text
       value: 'NO collider
 
+
         rigidbody + gravity'
       objectReference: {fileID: 0}
     - target: {fileID: 8545971125087313885, guid: 27170c70f0a35e0429ef28b54ad6b57b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.25
+      value: 0.6300001
       objectReference: {fileID: 0}
     - target: {fileID: 8545971125087313885, guid: 27170c70f0a35e0429ef28b54ad6b57b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -404,11 +405,12 @@ PrefabInstance:
       propertyPath: m_text
       value: 'NO collider
 
+
         NO rigidbody'
       objectReference: {fileID: 0}
     - target: {fileID: 3940838231244425401, guid: 02252fc96bf1ec644b5041b48e2b6710, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5
+      value: -3.12
       objectReference: {fileID: 0}
     - target: {fileID: 3940838231244425401, guid: 02252fc96bf1ec644b5041b48e2b6710, type: 3}
       propertyPath: m_LocalPosition.y
@@ -489,6 +491,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'collider or NOT
 
+
         rigidbody
 
         gravity or NOT
@@ -500,7 +503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3940838231244425401, guid: 02252fc96bf1ec644b5041b48e2b6710, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.75
+      value: 3.13
       objectReference: {fileID: 0}
     - target: {fileID: 3940838231244425401, guid: 02252fc96bf1ec644b5041b48e2b6710, type: 3}
       propertyPath: m_LocalPosition.y
@@ -659,7 +662,7 @@ Transform:
   m_GameObject: {fileID: 703699896}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 2.25, z: 5}
+  m_LocalPosition: {x: 0, y: 1.75, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -777,11 +780,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1651265956805776076, guid: 02252fc96bf1ec644b5041b48e2b6710, type: 3}
       propertyPath: m_text
-      value: "collider \nrigidbody NO gravity"
+      value: "collider \n\nrigidbody NO gravity"
       objectReference: {fileID: 0}
     - target: {fileID: 3940838231244425401, guid: 02252fc96bf1ec644b5041b48e2b6710, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.6199999
       objectReference: {fileID: 0}
     - target: {fileID: 3940838231244425401, guid: 02252fc96bf1ec644b5041b48e2b6710, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1259,7 +1262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3940838231244425401, guid: 02252fc96bf1ec644b5041b48e2b6710, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2500002
+      value: -1.8700001
       objectReference: {fileID: 0}
     - target: {fileID: 3940838231244425401, guid: 02252fc96bf1ec644b5041b48e2b6710, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1334,11 +1337,12 @@ PrefabInstance:
       propertyPath: m_text
       value: 'collider
 
+
         rigidbody + gravity'
       objectReference: {fileID: 0}
     - target: {fileID: 8545971125087313885, guid: 27170c70f0a35e0429ef28b54ad6b57b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.5
+      value: 1.8800001
       objectReference: {fileID: 0}
     - target: {fileID: 8545971125087313885, guid: 27170c70f0a35e0429ef28b54ad6b57b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1402,18 +1406,6 @@ PrefabInstance:
       value: _minimal setup
       objectReference: {fileID: 0}
     - target: {fileID: 1418463870052359650, guid: 5544916be247c764688c5f311964ba46, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1418463870052359650, guid: 5544916be247c764688c5f311964ba46, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1418463870052359650, guid: 5544916be247c764688c5f311964ba46, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1418463870052359650, guid: 5544916be247c764688c5f311964ba46, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -1441,6 +1433,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1967398615904705162, guid: 5544916be247c764688c5f311964ba46, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 703699897}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
