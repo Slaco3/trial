@@ -44,6 +44,15 @@ public partial class @MyInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""0171b071-4c71-4458-b6d7-7944c3478d7a"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -93,17 +102,6 @@ public partial class @MyInputAction: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""f0489dd7-5230-4d09-8875-1e874d322115"",
-                    ""path"": ""<Pointer>/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse and keyboard"",
-                    ""action"": ""Rotate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""ee6f36bd-53d3-4be2-a778-7f0a5d6263b7"",
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
@@ -112,6 +110,72 @@ public partial class @MyInputAction: IInputActionCollection2, IDisposable
                     ""action"": ""Rotate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""d345f90b-5849-4361-9079-0c4e471c095c"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""0ea9b7ce-c875-459b-9ba5-336c280514a2"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and keyboard"",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""90399711-087c-4d32-8efa-4b037fe2f000"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and keyboard"",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""def14bb2-462b-4f37-a657-0f51cacc10a5"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""8b393f32-454e-4769-8d70-b38449bb3418"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and keyboard"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""f5ac97fe-05c8-49d1-a7d8-5e0ab6bf3ba3"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and keyboard"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -251,6 +315,7 @@ public partial class @MyInputAction: IInputActionCollection2, IDisposable
         m_firstPerson = asset.FindActionMap("firstPerson", throwIfNotFound: true);
         m_firstPerson_shoot = m_firstPerson.FindAction("shoot", throwIfNotFound: true);
         m_firstPerson_Rotate = m_firstPerson.FindAction("Rotate", throwIfNotFound: true);
+        m_firstPerson_Move = m_firstPerson.FindAction("Move", throwIfNotFound: true);
         // spectator
         m_spectator = asset.FindActionMap("spectator", throwIfNotFound: true);
         m_spectator_EnableRotate = m_spectator.FindAction("EnableRotate", throwIfNotFound: true);
@@ -319,12 +384,14 @@ public partial class @MyInputAction: IInputActionCollection2, IDisposable
     private List<IFirstPersonActions> m_FirstPersonActionsCallbackInterfaces = new List<IFirstPersonActions>();
     private readonly InputAction m_firstPerson_shoot;
     private readonly InputAction m_firstPerson_Rotate;
+    private readonly InputAction m_firstPerson_Move;
     public struct FirstPersonActions
     {
         private @MyInputAction m_Wrapper;
         public FirstPersonActions(@MyInputAction wrapper) { m_Wrapper = wrapper; }
         public InputAction @shoot => m_Wrapper.m_firstPerson_shoot;
         public InputAction @Rotate => m_Wrapper.m_firstPerson_Rotate;
+        public InputAction @Move => m_Wrapper.m_firstPerson_Move;
         public InputActionMap Get() { return m_Wrapper.m_firstPerson; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -340,6 +407,9 @@ public partial class @MyInputAction: IInputActionCollection2, IDisposable
             @Rotate.started += instance.OnRotate;
             @Rotate.performed += instance.OnRotate;
             @Rotate.canceled += instance.OnRotate;
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
         }
 
         private void UnregisterCallbacks(IFirstPersonActions instance)
@@ -350,6 +420,9 @@ public partial class @MyInputAction: IInputActionCollection2, IDisposable
             @Rotate.started -= instance.OnRotate;
             @Rotate.performed -= instance.OnRotate;
             @Rotate.canceled -= instance.OnRotate;
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
         }
 
         public void RemoveCallbacks(IFirstPersonActions instance)
@@ -451,6 +524,7 @@ public partial class @MyInputAction: IInputActionCollection2, IDisposable
     {
         void OnShoot(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
     }
     public interface ISpectatorActions
     {
